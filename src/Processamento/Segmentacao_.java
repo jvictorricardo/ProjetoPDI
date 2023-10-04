@@ -272,4 +272,130 @@ public class Segmentacao_ {
         
         return Aplicar_Binarizacao_(Imagem, Limiar);
     }
+    
+    // Algoritmo de Limiarizacao por Entropia de Pun
+    public static BufferedImage LimiarEntropiaPun(BufferedImage img){
+
+        BufferedImage res = new BufferedImage(img.getWidth(), img.getHeight(), img.getType());
+        //Armazenando o tamanho da imagem
+        int Largura = img.getWidth();// Largura da imagem
+        int Altura = img.getHeight();// Altura da imagem   
+
+        int l, t, cinza, pTotal;
+        double MaxProb1, MaxProb2, Aux1, Aux2, Aux3;
+        double HT, Ht, Pt;
+        double max;
+        double []ni = new double[256];
+        double []prob = new double[256];    
+        byte Limiar = 0;
+
+    //    if ( !(VerifyConsistentIn() && VerifyConsistentOut()) )
+    //        return FALSE;
+    //CopyImageInOut();
+    //ClockStart();
+    //Histograma();
+    // inicializacao do Histograma
+        for(int i=0; i < 256; i++){
+            ni[i]= 0;
+        }
+
+        pTotal = Largura * Altura;
+    // calculo do Histograma  
+        for(int lin = 0; lin < Altura; lin++) {
+            for(int col = 0; col < Largura; col++) {
+                Color x = new Color(img.getRGB(col,lin));
+                    cinza = (int)((x.getGreen() + x.getRed() + x.getBlue())/3);
+                    ni[cinza]++;
+            }
+        }
+    // Calculo das probabilidades do histograma
+    for (l = 0; l < 256; l++) {
+    prob[l] = (double)ni[l]/pTotal;
+    ni [l] = 0;
+    }
+
+    // Entropia Total
+        HT = 0;
+        for (l = 0; l < 256; l++) {
+            if (prob[l] != 0)
+            HT += - prob[l] * Math.log(prob[l]);
+        }
+
+        Pt = 0;
+        Ht = 0;
+        MaxProb1 = 0;
+        for (t = 0; t < 256; t++){
+            if ( prob[t] != 0){
+
+            // Entropia de Pixels Pretos
+            Pt += prob[t];
+            Ht += - prob[t] * Math.log(prob[t]);
+            Aux3 = Ht / HT;
+
+            // Max da Probabilidade de 1 a t
+            if (prob[t] > MaxProb1 ){
+                MaxProb1 = prob[t];
+            }
+
+            // Auxiliar para o Log da Probabilidade Maxima
+            if (MaxProb1 != 0){
+                Aux1 = ( Aux3) * (Math.log( Pt) / Math.log(MaxProb1));
+            }else{
+                Aux1 = 0;
+            }
+
+            // Max da probabilidade de t+1 a 255    
+            MaxProb2 = 0;
+            for (l=t+1; l<256; l++){
+                if (prob[l] > MaxProb2 )
+                MaxProb2 = prob[l];
+            }
+
+            // Auxiliar para o Log da Probabilidade Maxima
+            if ( MaxProb2 != 0 ){
+                Aux2 = (1 - Aux3) * (Math.log(1 - Pt) / Math.log(MaxProb2) );
+            }else {
+                Aux2 = 0;
+            }
+
+            // Calculo Final
+            ni[t] = Aux1 + Aux2;
+        }
+    }
+    max = 0;
+    for (t = 0; t < 256; t++) {
+        if (ni[t] > max) {
+            max = ni[t];
+            Limiar = (byte)t;
+        }
+    }
+
+    //Cria a  imagem  binarizada 
+    // Aloca a Matriz
+    int [][] pBufferbinario = new int[Altura][Largura]; //Cria um PONTEIRO para a  imagem  binarizada 
+
+    for(int lin = 0; lin < Altura; lin++) {
+        for(int col = 0; col < Largura; col++) {
+            Color x = new Color(img.getRGB(col,lin));
+            cinza = (int)((x.getGreen() + x.getRed() + x.getBlue())/3); 
+            if (cinza >= Limiar){
+                pBufferbinario[lin][col] = 1;
+            } else {
+            //255; mudado para fazer a multiplicacao img original * binária
+                pBufferbinario[lin][col] = 0;
+            }
+        }
+    }
+
+    //Aqui Gera a  imagem binária 
+    for(int lin = 0; lin < Altura; lin++) {
+        for(int col = 0; col < Largura; col++){
+            int atual = pBufferbinario[lin][col]* 255;
+            Color novo = new Color(atual, atual, atual);
+            res.setRGB(col,lin, novo.getRGB());
+        }
+    }
+
+    return res;
+    }
 }
