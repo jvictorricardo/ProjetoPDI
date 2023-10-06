@@ -4,9 +4,7 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import static java.lang.Math.abs;
 
-public class Segmentacao_ {
-    
-    
+public class Segmentacao_ {    
     /*  Metodo para calcular o histograma
         de uma imagem em niveis de cinza.   */
     private static int[] Calcular_Niveis_Cinza_(BufferedImage Imagem){
@@ -65,7 +63,6 @@ public class Segmentacao_ {
         return Niveis_;
     }
     
-    
     /*  Metodo para binarizar uma imagem, em
         niveis de cinza, com base em um limiar. */
     private static BufferedImage Aplicar_Binarizacao_(BufferedImage Img, int Limiar){
@@ -99,10 +96,6 @@ public class Segmentacao_ {
         
         return Img_binarizada;
     }
-    
-    
-    
-    
     
     /*  Algoritmo para segmentacao
         (Binarizacao Otsu Tradicional). */
@@ -168,8 +161,6 @@ public class Segmentacao_ {
 
         return Aplicar_Binarizacao_(Imagem, Limiar);
     }
-    
-    
     
     /*  Algoritmo para segmentacao
         (Binarizacao Fuzzy Huang).  */

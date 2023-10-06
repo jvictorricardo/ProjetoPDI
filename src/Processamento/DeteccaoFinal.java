@@ -16,25 +16,22 @@ public class DeteccaoFinal {
         int Linha, Coluna;
         int Altura  = ImgAtual.getHeight();  // Altura da imagem.
         int Largura = ImgAtual.getWidth();   // Largura da imagem.
+        
         // Buffer para a imagem final.
         BufferedImage ImgAtual_detectada = new BufferedImage(Largura, Altura, ImgAtual.getType());
-        
-        
+                
         // Loop para finalizar a imagem.
         for(Linha = 0; Linha < Altura; Linha++){
-            for(Coluna = 0; Coluna < Largura; Coluna++){
-                
+            for(Coluna = 0; Coluna < Largura; Coluna++){       
                 // Cor da imagem binarizada
                 Color Cor1 = new Color(ImgAtual.getRGB(Coluna, Linha));
                 // Cor da imagem Original.
                 Color Cor2 = new Color(ImgOriginal.getRGB(Coluna, Linha));
-                
-                
                 Color Resultado;
+                
                 //Se for preto
                 if(Color.BLACK.hashCode() == Cor1.hashCode()){
-                    //fica preto
-                    Resultado = Color.BLACK;
+                    Resultado = Color.BLACK;//fica preto
                 }
                 //Se ñ for preto
                 else{
@@ -42,8 +39,7 @@ public class DeteccaoFinal {
                     Resultado = new Color(Cor2.getRed(), Cor2.getGreen(), Cor2.getBlue());
                 }
                 
-                
-                // Montagem da imagem final.
+                //Colocando o pixel escolhido no resultado
                 ImgAtual_detectada.setRGB(Coluna, Linha, Resultado.getRGB());
             }
         }
