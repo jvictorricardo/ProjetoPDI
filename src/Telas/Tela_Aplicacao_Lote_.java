@@ -300,7 +300,14 @@ public class Tela_Aplicacao_Lote_ extends javax.swing.JFrame {
                                 
                                 // Aplica algum algoritmo.
                                 if(Detectar_RI)              Img_Processada = Processamento_Imagem_.RI_(Img_original);
-                                else if(Detectar_BI)         Img_Processada = Processamento_Imagem_.BI_(Img_original);
+                                else if(Detectar_BI){
+                                    //Selecionando o método de blueness de acordo com o nome setado na outra tela
+                                    if("_BlueGabautz".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BI_(Img_original);
+                                    else if("_BlueGasparini".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BIA_(Img_original);
+                                    //QUANDO IMPLEMENTAR O 3º METODO, METER O NOME DE JANELA AQUI PRA CHAMAR O BLUENESS EM LOTE!!!!
+                                    //else if("_BlueGabautz".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BI_(Img_original);
+                                    
+                                }
                                 else if(Aplicar_segmentacao) Img_Processada = Processamento_Imagem_.Segment_(Img_original, Segmentacao_tipo);
                                 
                                 // Salva a imagem processada.

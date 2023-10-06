@@ -8,7 +8,7 @@ import java.awt.image.BufferedImage;
 public class Processamento_Imagem_ {
 
         /*  Metodo para a deteccao de
-            Redness Index em imagens.   */
+            Blueness Index em imagens.   */
 	public static BufferedImage RI_(BufferedImage Imagem){
             
             // Aplicacao do algoritmo.
@@ -24,6 +24,13 @@ public class Processamento_Imagem_ {
             return Blueness_Index_.Blueness_(Imagem);
 	}
         
+        //Criando o método para chamar o blueness do código do antonio
+        public static BufferedImage BIA_(BufferedImage Imagem){
+            
+            // Aplicacao do algoritmo.
+            return Blueness_Index_Antonio.Blueness_Antonio(Imagem);
+	}
+        
 	
         /*  Metodo para aplicar uma
             segmentacao em imagens. */
@@ -34,6 +41,7 @@ public class Processamento_Imagem_ {
                 
                 case 1:  return Segmentacao_.Otsu_Binarization_(Imagem);
                 case 2:  return Segmentacao_.Fuzzy_Huang_Binarization_(Imagem);
+                case 3:  return Segmentacao_.LimiarEntropiaPun(Imagem);//foi adicionado aqui
                 default: return Imagem;
             }
 	}

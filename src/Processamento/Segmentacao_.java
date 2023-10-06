@@ -4,9 +4,6 @@ import java.awt.Color;
 import java.awt.image.BufferedImage;
 import static java.lang.Math.abs;
 
-/**
- * @author João Victor do Rozario Recla - 2022/2
- */
 public class Segmentacao_ {
     
     
@@ -392,6 +389,7 @@ public class Segmentacao_ {
         for(int col = 0; col < Largura; col++){
             int atual = pBufferbinario[lin][col]* 255;
             Color novo = new Color(atual, atual, atual);
+            //System.out.println(novo.hashCode());
             res.setRGB(col,lin, novo.getRGB());
         }
     }

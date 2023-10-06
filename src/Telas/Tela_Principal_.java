@@ -11,6 +11,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.filechooser.FileNameExtensionFilter;
 import Processamento.Processamento_Imagem_;
+import Processamento.DeteccaoFinal;
 import java.awt.Color;
 
 /**
@@ -21,8 +22,9 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     public File Img_original;
     public boolean Img_carregada;
     public BufferedImage Img_atual;
+    public BufferedImage Copia_deteccao;
     public File Caminho = new File("/home/");
-    public boolean Img_RI, Img_BI, Img_segmentada;
+    public boolean Img_RI, Img_BI, Img_segmentada, Detectada;
     
     /**
      * Creates new form TelaPrincipal
@@ -66,9 +68,9 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Aplicar_BI_Lote_ = new javax.swing.JMenuItem();
         Menu_Blueness_Index_1 = new javax.swing.JMenu();
         Blueness_1 = new javax.swing.JMenu();
-        Aplicar_BI_Imagem_1 = new javax.swing.JMenuItem();
+        Aplicar_Bl_Ant_Imagem_1 = new javax.swing.JMenuItem();
         ___Separador_7 = new javax.swing.JPopupMenu.Separator();
-        Aplicar_BI_Lote_1 = new javax.swing.JMenuItem();
+        Aplicar_BI_Ant_Lote_1 = new javax.swing.JMenuItem();
         Menu_Blueness_Index_2 = new javax.swing.JMenu();
         Blueness_2 = new javax.swing.JMenu();
         Aplicar_BI_Imagem_2 = new javax.swing.JMenuItem();
@@ -88,7 +90,8 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Aplicar_FuzzyHuang_Imagem_1 = new javax.swing.JMenuItem();
         ___Separador_9 = new javax.swing.JPopupMenu.Separator();
         Aplicar_FuzzyHuang_Lote_1 = new javax.swing.JMenuItem();
-        Menu_Outros_1 = new javax.swing.JMenu();
+        Deteccao_Final_Menu = new javax.swing.JMenu();
+        Sobre_1 = new javax.swing.JMenuItem();
         Menu_Outros_ = new javax.swing.JMenu();
         Sobre_ = new javax.swing.JMenuItem();
 
@@ -217,9 +220,11 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Menus.add(Menu_Blueness_Index_);
 
         Menu_Blueness_Index_1.setBorder(null);
-        Menu_Blueness_Index_1.setText("Blueness Ant");
+        Menu_Blueness_Index_1.setText("Blueness Antônio");
         Menu_Blueness_Index_1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         Menu_Blueness_Index_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Menu_Blueness_Index_1.setMaximumSize(new java.awt.Dimension(140, 32767));
+        Menu_Blueness_Index_1.setMinimumSize(new java.awt.Dimension(140, 25));
         Menu_Blueness_Index_1.setPreferredSize(new java.awt.Dimension(120, 25));
 
         Blueness_1.setBorder(null);
@@ -228,28 +233,28 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Blueness_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         Blueness_1.setPreferredSize(new java.awt.Dimension(170, 25));
 
-        Aplicar_BI_Imagem_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_BI_Imagem_1.setText("Aplicar na imagem");
-        Aplicar_BI_Imagem_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_BI_Imagem_1.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_BI_Imagem_1.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_Bl_Ant_Imagem_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_Bl_Ant_Imagem_1.setText("Aplicar na imagem");
+        Aplicar_Bl_Ant_Imagem_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_Bl_Ant_Imagem_1.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_Bl_Ant_Imagem_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_BI_Imagem_1ActionPerformed(evt);
+                Aplicar_Bl_Ant_Imagem_1ActionPerformed(evt);
             }
         });
-        Blueness_1.add(Aplicar_BI_Imagem_1);
+        Blueness_1.add(Aplicar_Bl_Ant_Imagem_1);
         Blueness_1.add(___Separador_7);
 
-        Aplicar_BI_Lote_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_BI_Lote_1.setText("Aplicar em lote");
-        Aplicar_BI_Lote_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_BI_Lote_1.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_BI_Lote_1.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_BI_Ant_Lote_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_BI_Ant_Lote_1.setText("Aplicar em lote");
+        Aplicar_BI_Ant_Lote_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_BI_Ant_Lote_1.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_BI_Ant_Lote_1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_BI_Lote_1ActionPerformed(evt);
+                Aplicar_BI_Ant_Lote_1ActionPerformed(evt);
             }
         });
-        Blueness_1.add(Aplicar_BI_Lote_1);
+        Blueness_1.add(Aplicar_BI_Ant_Lote_1);
 
         Menu_Blueness_Index_1.add(Blueness_1);
 
@@ -397,12 +402,29 @@ public class Tela_Principal_ extends javax.swing.JFrame {
 
         Menus.add(Menu_Segmentacao_);
 
-        Menu_Outros_1.setBorder(null);
-        Menu_Outros_1.setText("Detecção Final");
-        Menu_Outros_1.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
-        Menu_Outros_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Menu_Outros_1.setPreferredSize(new java.awt.Dimension(120, 25));
-        Menus.add(Menu_Outros_1);
+        Deteccao_Final_Menu.setBorder(null);
+        Deteccao_Final_Menu.setText("Detecção Final");
+        Deteccao_Final_Menu.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
+        Deteccao_Final_Menu.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Deteccao_Final_Menu.setPreferredSize(new java.awt.Dimension(120, 25));
+        Deteccao_Final_Menu.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Deteccao_Final_MenuActionPerformed(evt);
+            }
+        });
+
+        Sobre_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Sobre_1.setText("Sobre o software");
+        Sobre_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Sobre_1.setPreferredSize(new java.awt.Dimension(170, 25));
+        Sobre_1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Sobre_1ActionPerformed(evt);
+            }
+        });
+        Deteccao_Final_Menu.add(Sobre_1);
+
+        Menus.add(Deteccao_Final_Menu);
 
         Menu_Outros_.setBorder(null);
         Menu_Outros_.setText("Outros");
@@ -458,6 +480,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
                 // Carrega a imagem para o sistema.
                 Img_original = Fs.getSelectedFile();
                 Img_atual    = ImageIO.read(Img_original);
+                Copia_deteccao    = ImageIO.read(Img_original);
                 Tela_.setIcon(new javax.swing.ImageIcon(Img_atual));
                 Img_carregada = true;
 
@@ -508,8 +531,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     /*  Metodo para restaurar uma imagem carregada. */
     private void Restaurar_Imagem_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Restaurar_Imagem_ActionPerformed
         
-        if(Img_carregada){ 
-            
+        if(Img_carregada){            
             try {
                 Img_atual = ImageIO.read(Img_original);
             } catch (IOException ex) {
@@ -526,7 +548,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         
         JFrame F = new JFrame();
         JOptionPane.showMessageDialog(F, "Programa desenvolvido e implementado por João Victor Ricardo de Andrade"
-                                       + "\ne Antonielly Bergami Ribeiro em 2023/2, na disciplina de PDI \nministrada pelo Prof. Jacques Facon.");
+                                       + "e Antonielly Bergami Ribeiro em 2023/2, na disciplina de PDI \nministrada pelo Prof. Jacques Facon.");
     }//GEN-LAST:event_Sobre_ActionPerformed
 
     
@@ -675,13 +697,40 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Tela.setVisible(true);
     }//GEN-LAST:event_Aplicar_FuzzyHuang_Lote_ActionPerformed
 
-    private void Aplicar_BI_Imagem_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Imagem_1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Aplicar_BI_Imagem_1ActionPerformed
+    private void Aplicar_Bl_Ant_Imagem_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_Bl_Ant_Imagem_1ActionPerformed
+        JFrame F = new JFrame();
+        
+        if(Img_carregada){
+            
+            try{
+                
+                // Aplica o algoritmo na imagem atual.
+                BufferedImage Img_processada = Processamento_Imagem_.BIA_(Img_atual);
+                 
+                if(Img_processada == null) {
+                    JOptionPane.showMessageDialog(F, "Não foi possível aplicar a deteccao de BI!");
+                }
+                else{
+                    Img_atual = Img_processada;
+                    Tela_.setIcon(new javax.swing.ImageIcon(Img_atual));
+                    Img_BI = true;
+                }
+            }catch(NullPointerException | IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(F, "Não foi possível aplicar a deteccao de BI!");
+                Logger.getLogger(Tela_Principal_.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(F, "Nenhuma imagem foi carregada!");
+        }
+    }//GEN-LAST:event_Aplicar_Bl_Ant_Imagem_1ActionPerformed
 
-    private void Aplicar_BI_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Lote_1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Aplicar_BI_Lote_1ActionPerformed
+    private void Aplicar_BI_Ant_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Ant_Lote_1ActionPerformed
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
+        Tela.setLocationRelativeTo(null);
+        Tela.Detectar_BI = true;
+        Tela.Metodo_nome = "_BlueGasparini";
+        Tela.setVisible(true);
+    }//GEN-LAST:event_Aplicar_BI_Ant_Lote_1ActionPerformed
 
     private void Aplicar_BI_Imagem_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Imagem_2ActionPerformed
         // TODO add your handling code here:
@@ -692,12 +741,76 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     }//GEN-LAST:event_Aplicar_BI_Lote_2ActionPerformed
 
     private void Aplicar_FuzzyHuang_Imagem_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_FuzzyHuang_Imagem_1ActionPerformed
-        // TODO add your handling code here:
+         JFrame F = new JFrame();
+        
+        if(Img_carregada){
+            
+            try{
+                
+                // Aplica o algoritmo na imagem atual.
+                BufferedImage Img_processada = Processamento_Imagem_.Segment_(Img_atual, 3);
+                
+                if(Img_processada == null) {
+                    
+                    JOptionPane.showMessageDialog(F, "Não foi possível aplicar a segmentação!");
+                }else{
+                    
+                    Img_atual = Img_processada;
+                    Tela_.setIcon(new javax.swing.ImageIcon(Img_atual));
+                    Img_segmentada = true;
+                }
+            }catch( NullPointerException | IllegalArgumentException ex){
+                
+                JOptionPane.showMessageDialog(F, "Não foi possível aplicar a segmentação!");
+                Logger.getLogger(Tela_Principal_.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(F, "Nenhuma imagem foi carregada!");
+        }
     }//GEN-LAST:event_Aplicar_FuzzyHuang_Imagem_1ActionPerformed
 
     private void Aplicar_FuzzyHuang_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_FuzzyHuang_Lote_1ActionPerformed
-        // TODO add your handling code here:
+         Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
+        Tela.setLocationRelativeTo(null);
+        Tela.Aplicar_segmentacao = true;
+        Tela.Metodo_nome         = "_BinPun";
+        Tela.Segmentacao_tipo    = 3;
+        Tela.setVisible(true);
     }//GEN-LAST:event_Aplicar_FuzzyHuang_Lote_1ActionPerformed
+
+    private void Deteccao_Final_MenuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Deteccao_Final_MenuActionPerformed
+        //placeholder :D
+    }//GEN-LAST:event_Deteccao_Final_MenuActionPerformed
+
+    private void Sobre_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sobre_1ActionPerformed
+        JFrame F = new JFrame();
+        
+        if(Img_carregada){     
+            try {
+                Copia_deteccao = ImageIO.read(Img_original);
+            } catch (IOException ex) {
+                Logger.getLogger(Tela_Principal_.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            try{                
+                // Aplica o algoritmo na imagem atual.
+                //BufferedImage Img_processada = Processamento_Imagem_.Segment_(Img_atual, 2);
+                BufferedImage Img_processada = DeteccaoFinal.Aplicar_Deteccao_Final_(Img_atual, Copia_deteccao);
+                
+                if(!Img_segmentada | (Img_processada == null)) {
+                    JOptionPane.showMessageDialog(F, "Não foi possível aplicar a detecção final!");
+                }else{                    
+                    Img_atual = Img_processada;
+                    Tela_.setIcon(new javax.swing.ImageIcon(Img_atual));
+                    Detectada = true;
+                }
+            }catch(NullPointerException | IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(F, "Não foi possível aplicar a detecção final!");
+                Logger.getLogger(Tela_Principal_.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(F, "Nenhuma imagem foi carregada!");
+        }
+    }//GEN-LAST:event_Sobre_1ActionPerformed
 
     
     /**
@@ -739,12 +852,12 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Aplicar_BI_Ant_Lote_1;
     private javax.swing.JMenuItem Aplicar_BI_Imagem_;
-    private javax.swing.JMenuItem Aplicar_BI_Imagem_1;
     private javax.swing.JMenuItem Aplicar_BI_Imagem_2;
     private javax.swing.JMenuItem Aplicar_BI_Lote_;
-    private javax.swing.JMenuItem Aplicar_BI_Lote_1;
     private javax.swing.JMenuItem Aplicar_BI_Lote_2;
+    private javax.swing.JMenuItem Aplicar_Bl_Ant_Imagem_1;
     private javax.swing.JMenuItem Aplicar_FuzzyHuang_Imagem_;
     private javax.swing.JMenuItem Aplicar_FuzzyHuang_Imagem_1;
     private javax.swing.JMenuItem Aplicar_FuzzyHuang_Lote_;
@@ -758,18 +871,19 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     private javax.swing.JMenu Blueness_1;
     private javax.swing.JMenu Blueness_2;
     private javax.swing.JMenuItem Carregar_Imagem_;
+    private javax.swing.JMenu Deteccao_Final_Menu;
     private javax.swing.JMenu Menu_Arquivo_;
     private javax.swing.JMenu Menu_Blueness_Index_;
     private javax.swing.JMenu Menu_Blueness_Index_1;
     private javax.swing.JMenu Menu_Blueness_Index_2;
     private javax.swing.JMenu Menu_Outros_;
-    private javax.swing.JMenu Menu_Outros_1;
     private javax.swing.JMenu Menu_Segmentacao_;
     private javax.swing.JMenuBar Menus;
     private javax.swing.JMenuItem Restaurar_Imagem_;
     private javax.swing.JMenuItem Sair_;
     private javax.swing.JMenuItem Salvar_;
     private javax.swing.JMenuItem Sobre_;
+    private javax.swing.JMenuItem Sobre_1;
     private javax.swing.JLabel Tela_;
     private javax.swing.JPopupMenu.Separator ___Separador_01;
     private javax.swing.JPopupMenu.Separator ___Separador_02;
