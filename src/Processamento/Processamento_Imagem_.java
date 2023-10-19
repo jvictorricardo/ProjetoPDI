@@ -6,15 +6,6 @@ import java.awt.image.BufferedImage;
  * @author João Victor do Rozário Recla - 2022/2
  */
 public class Processamento_Imagem_ {
-
-        /*  Metodo para a deteccao de
-            Blueness Index em imagens.   */
-	public static BufferedImage RI_(BufferedImage Imagem){
-            
-            // Aplicacao do algoritmo.
-            return Redness_Index_.riRedPlant_(Imagem);
-	}
-
         
         /*  Metodo para a deteccao de
             Blueness Index em imagens.  */

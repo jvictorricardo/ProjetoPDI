@@ -7,13 +7,6 @@ import java.awt.image.BufferedImage;
  * @author João Victor do Rozário Recla - 2022/2
  */
 public class Blueness_Index_Antonio {
-    
-    /*  Algoritmo para deteccao de Blueness Index, desenvolvido
-        por João Victor do Rozário Recla - 2022/2.
-    
-        Adaptacao do metodo de Gabautz (para deteccao de olhos
-        vermelhos) para a deteccao de Bluness Index em imagens.
-    */
     public static BufferedImage Blueness_Antonio(BufferedImage imagem) {
         double max = 0;
         double min = 255;
