@@ -431,6 +431,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
 
         Sobre_2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Sobre_2.setText("Aplicar em lote");
+        Sobre_2.setEnabled(false);
         Sobre_2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         Sobre_2.setPreferredSize(new java.awt.Dimension(170, 25));
         Sobre_2.addActionListener(new java.awt.event.ActionListener() {

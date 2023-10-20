@@ -300,8 +300,7 @@ public class Tela_Aplicacao_Lote extends javax.swing.JFrame {
                                 BufferedImage Img_Processada = Img_original;
                                 
                                 // Aplica algum algoritmo.
-                                if(Detectar_RI)              Img_Processada = Processamento_Imagem_.RI_(Img_original);
-                                else if(Detectar_BI){
+                                if(Detectar_BI){
                                     //Selecionando o método de blueness de acordo com o nome setado na outra tela
                                     if("_BlueGabautz".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BI_(Img_original);
                                     else if("_BlueGasparini".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BIA_(Img_original);
