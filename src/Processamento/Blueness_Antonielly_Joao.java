@@ -37,9 +37,9 @@ public class Blueness_Antonielly_Joao {
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
 		Color c = new Color(imagem.getRGB(i, j));
-		double rOriginal = new Double(c.getRed());
-		double gOriginal = new Double(c.getGreen());
-                double bOriginal = new Double(c.getBlue());
+		double rOriginal = Double.valueOf(c.getRed());
+		double gOriginal = Double.valueOf(c.getGreen());
+                double bOriginal = Double.valueOf(c.getBlue());
                                                                                            
                 if((rOriginal==0) && (gOriginal==0) && (bOriginal==0)){
                     r = g = b = 1/3;  
@@ -63,9 +63,9 @@ public class Blueness_Antonielly_Joao {
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
                 Color c = new Color(imagem.getRGB(i, j));
-                double rOriginal = new Double(c.getRed());
-                double gOriginal = new Double(c.getGreen());
-                double bOriginal = new Double(c.getBlue());
+                double rOriginal = Double.valueOf(c.getRed());
+                double gOriginal = Double.valueOf(c.getGreen());
+                double bOriginal = Double.valueOf(c.getBlue());
                                                                                            
                 if((rOriginal==0) && (gOriginal==0) && (bOriginal==0)){
                     r = g = b = 1/3;  
@@ -82,15 +82,15 @@ public class Blueness_Antonielly_Joao {
                 }
 
                 if(((r + g + b) <= 0)){ 
-                    Color novo = new Color(0, 0, 0);
-                    imagem.setRGB(i, j, novo.getRGB());
+                    //Color novo = new Color(0, 0, 0);
+                    //imagem.setRGB(i, j, novo.getRGB());
+                    resultadoAlg1[i][j] = new Color(0, 0, 0);
                 } else {
                     double riNormalizado = 255 * ((ri - min) / (max - min));
                     int riBW = (int) riNormalizado;
-
-                Color novo = new Color(riBW, riBW, riBW);
-                //imagem.setRGB(i, j, novo.getRGB());
-                resultadoAlg1[i][j] = novo;
+                    //Color novo = new Color(riBW, riBW, riBW);
+                    //imagem.setRGB(i, j, novo.getRGB());
+                    resultadoAlg1[i][j] = new Color(riBW, riBW, riBW);
                 }
             }
         }
@@ -106,9 +106,9 @@ public class Blueness_Antonielly_Joao {
 
                 // Niveis de cor de cada pixel.
                 Color C = new Color(imagem.getRGB(i, j));
-                double R = new Double(C.getRed());
-                double G = new Double(C.getGreen());
-                double B = new Double(C.getBlue());
+                double R = Double.valueOf(C.getRed());
+                double G = Double.valueOf(C.getGreen());
+                double B = Double.valueOf(C.getBlue());
                 
                 // Aplicacao do metodo.
                 BI_A[i][j] = Math.pow(B, 2);
@@ -132,17 +132,18 @@ public class Blueness_Antonielly_Joao {
                 
                 if(BI_B[i][j] <= 0){
 
-                    Color Novo = new Color(0, 0, 0);
-                    imagem.setRGB(i, j, Novo.getRGB());
+                    //Color Novo = new Color(0, 0, 0);
+                    //imagem.setRGB(i, j, Novo.getRGB());
+                    resultadoAlg2[i][j] = new Color(0, 0, 0);
                 } else {
                     
                     // Normalizacao dos niveis de cor.
                     double BI_normalizado = ((BI - Index_min) / (Index_max - Index_min)) * 255;
                     int BI_color = (int) BI_normalizado;
 
-                    Color Novo = new Color(BI_color, BI_color, BI_color);
+                    //Color Novo = new Color(BI_color, BI_color, BI_color);
                     //imagem.setRGB(i, j, Novo.getRGB());
-                    resultadoAlg2[i][j] = Novo;
+                    resultadoAlg2[i][j] = new Color(BI_color, BI_color, BI_color);
                 }
             }
         }
@@ -154,8 +155,8 @@ public class Blueness_Antonielly_Joao {
         */
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
-
-                if(resultadoAlg1[i][j].getBlue() > resultadoAlg2[i][j].getBlue()){
+                //acho que essa comparação não funciona
+                if(resultadoAlg1[i][j].getRGB() > resultadoAlg2[i][j].getRGB()){
                     imagem.setRGB(i, j, resultadoAlg1[i][j].getRGB());
                 }
                 else{
