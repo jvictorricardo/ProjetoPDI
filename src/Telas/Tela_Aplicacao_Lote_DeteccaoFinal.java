@@ -279,7 +279,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                 Escolheu_origem = true;
             }           
         } catch(NullPointerException ex){
-            Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(Level.SEVERE, null, ex);
         }  
     }//GEN-LAST:event_Selecionar_Pasta_Origem_ActionPerformed
 
@@ -356,7 +356,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                                     Qnt_imgs_processadas++;
 
                                 } catch (IOException ex) {
-                                    Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(Level.SEVERE, null, ex);
+                                    Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(Level.SEVERE, null, ex);
                                 }    
                             }                
                         }
@@ -399,7 +399,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                         try {
                             desktop.open(Pasta_destino);    // Abre a pasta de destino.
                         }catch (IOException ex) {
-                            Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(Level.SEVERE, null, ex);
+                            Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(Level.SEVERE, null, ex);
                         }
                     }else{
                         
@@ -452,7 +452,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                 Escolheu_destino = true;
             }
         } catch(NullPointerException ex){
-            Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Selecionar_Pasta_Destino_ActionPerformed
 
@@ -473,7 +473,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                 Escolheu_origem_bin = true;
             }           
         } catch(NullPointerException ex){
-            Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(Level.SEVERE, null, ex);
         }
     }//GEN-LAST:event_Selecionar_Pasta_Destino_1ActionPerformed
 
@@ -499,13 +499,13 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
         //</editor-fold>
@@ -513,7 +513,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new Tela_Aplicacao_Lote().setVisible(true);
+                new Tela_Aplicacao_Lote_().setVisible(true);
             }
         });
     }

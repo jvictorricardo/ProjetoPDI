@@ -280,16 +280,16 @@
             <Property name="border" type="javax.swing.border.Border" editor="org.netbeans.modules.form.editors2.BorderEditor">
               <Border info="null"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Blueness Nielly e jo&#xe3;o"/>
+            <Property name="text" type="java.lang.String" value="Blueness Antonielly e jo&#xe3;o"/>
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Dialog" size="14" style="1"/>
             </Property>
             <Property name="horizontalTextPosition" type="int" value="10"/>
             <Property name="minimumSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[140, 25]"/>
+              <Dimension value="[190, 25]"/>
             </Property>
             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
-              <Dimension value="[180, 25]"/>
+              <Dimension value="[190, 25]"/>
             </Property>
           </Properties>
           <SubComponents>
@@ -308,7 +308,7 @@
                 </Property>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Imagem_2">
+                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_AJ_menu">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Cambria" size="14" style="1"/>
@@ -320,7 +320,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Imagem_2ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_AJ_menuActionPerformed"/>
                   </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JPopupMenu$Separator" name="___Separador_8">

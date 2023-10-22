@@ -292,19 +292,27 @@ public class Tela_Aplicacao_Lote_ extends javax.swing.JFrame {
                            (Opcao_BMP_.isSelected() && Arquivos.getName().toLowerCase().endsWith(".bmp")))
                         {
                             
-                            try {
-                                
+                            try {                               
                                 // Pega uma imagem.
                                 BufferedImage Img_original   = ImageIO.read(Arquivos);
                                 BufferedImage Img_Processada = Img_original;
                                 
                                 // Aplica algum algoritmo.
                                 if(Detectar_BI){
-                                    //Selecionando o método de blueness de acordo com o nome setado na outra tela
-                                    if("_BlueGabautz".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BI_(Img_original);
-                                    else if("_BlueGasparini".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BIA_(Img_original);
-                                    //QUANDO IMPLEMENTAR O 3º METODO, METER O NOME DE JANELA AQUI PRA CHAMAR O BLUENESS EM LOTE!!!!
-                                    //else if("_BlueGabautz".equals(Metodo_nome)) Img_Processada = Processamento_Imagem_.BI_(Img_original);
+                                    if(null != Metodo_nome) //Selecionando o método de blueness de acordo com o nome setado na outra tela
+                                    switch (Metodo_nome) {
+                                        case "_BlueGabautz":
+                                            Img_Processada = Processamento_Imagem_.BI_(Img_original);
+                                            break;
+                                        case "_BlueGasparini":
+                                            Img_Processada = Processamento_Imagem_.BIA_(Img_original);
+                                            break;
+                                        case "_Combinacao":
+                                            Img_Processada = Processamento_Imagem_.BIAJ_(Img_original);
+                                            break;
+                                        default:
+                                            break;
+                                    }
                                     
                                 }
                                 else if(Aplicar_segmentacao) Img_Processada = Processamento_Imagem_.Segment_(Img_original, Segmentacao_tipo);

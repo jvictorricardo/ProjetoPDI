@@ -19,11 +19,12 @@ public class Blueness_Antonielly_Joao {
         double b;
         
         
-        //variaveis jao
+        //variaveis joao r.
         double BI;                              // Indice de Blueness.
         int K = 14;                             // Indice K.
         double Index_max = Double.MIN_VALUE;    // Inidce maximo.
         double Index_min = Double.MAX_VALUE;    // Indice minimo.        
+        
         // Auxiliares para a aplicacao do metodo.
         double BI_A[][] = new double[imagem.getWidth()][imagem.getHeight()];
         double BI_B[][] = new double[imagem.getWidth()][imagem.getHeight()];
@@ -33,6 +34,15 @@ public class Blueness_Antonielly_Joao {
         Color resultadoAlg1[][] = new Color[imagem.getWidth()][imagem.getHeight()];
         Color resultadoAlg2[][] = new Color[imagem.getWidth()][imagem.getHeight()];
         
+        
+        /*
+            Aplicando o método do antonio e armazenando em uma matriz.
+            Talvez não seja o método mais eficiente em qurstão de custo computa_
+            _cional, mas fica aí por enquanto.
+      
+            Loop para percorrer os pixels da imagem (Coluna x Linha), e
+            calcular os indices maximo e minimo de Bluness na imagem:
+        */
         
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
@@ -59,7 +69,9 @@ public class Blueness_Antonielly_Joao {
             }
         }
 	
-        //Normalização do método do Antônio
+        /*
+            Loop para normalização dos pixeis obtidos no processo de blueness.
+        */
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
                 Color c = new Color(imagem.getRGB(i, j));
@@ -80,16 +92,11 @@ public class Blueness_Antonielly_Joao {
                 }else{
                     ri = 0;
                 }
-
                 if(((r + g + b) <= 0)){ 
-                    //Color novo = new Color(0, 0, 0);
-                    //imagem.setRGB(i, j, novo.getRGB());
                     resultadoAlg1[i][j] = new Color(0, 0, 0);
                 } else {
                     double riNormalizado = 255 * ((ri - min) / (max - min));
                     int riBW = (int) riNormalizado;
-                    //Color novo = new Color(riBW, riBW, riBW);
-                    //imagem.setRGB(i, j, novo.getRGB());
                     resultadoAlg1[i][j] = new Color(riBW, riBW, riBW);
                 }
             }
@@ -97,10 +104,14 @@ public class Blueness_Antonielly_Joao {
         
         
         
-        //APLICANDO O MÉTODO DO JAO ROSARIO   
-        
-        /*  Loop para percorrer os pixels da imagem (Coluna x Linha), e
-            calcular os indices maximo e minimo de Bluness na imagem.   */
+        /*
+            Aplicando o método do joão do rosário e armazenando em uma matriz.
+            Talvez não seja o método mais eficiente em qurstão de custo computa_
+            _cional, mas fica aí por enquanto.
+      
+            Loop para percorrer os pixels da imagem (Coluna x Linha), e
+            calcular os indices maximo e minimo de Bluness na imagem:
+        */
         for(int i = 0; i < imagem.getWidth(); i++) { //for para as linhas
             for(int j = 0; j < imagem.getHeight(); j++) {
 
@@ -122,27 +133,21 @@ public class Blueness_Antonielly_Joao {
         }
 
         
-        /*  Loop para percorrer os pixels da imagem (Coluna x Linha),
-            e normalizar os niveis de cor da imagem.    */
+        /*  
+            Loop para percorrer os pixels da imagem (Coluna x Linha),
+            e normalizar os niveis de cor da imagem.
+        */
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
-
                 // Indice de Blueness do pixel(i, j).
                 BI = (double)(BI_A[i][j] / BI_B[i][j]);
-                
+                //Caso a área não seja de interesse
                 if(BI_B[i][j] <= 0){
-
-                    //Color Novo = new Color(0, 0, 0);
-                    //imagem.setRGB(i, j, Novo.getRGB());
                     resultadoAlg2[i][j] = new Color(0, 0, 0);
                 } else {
-                    
                     // Normalizacao dos niveis de cor.
                     double BI_normalizado = ((BI - Index_min) / (Index_max - Index_min)) * 255;
                     int BI_color = (int) BI_normalizado;
-
-                    //Color Novo = new Color(BI_color, BI_color, BI_color);
-                    //imagem.setRGB(i, j, Novo.getRGB());
                     resultadoAlg2[i][j] = new Color(BI_color, BI_color, BI_color);
                 }
             }
@@ -151,12 +156,18 @@ public class Blueness_Antonielly_Joao {
         
         /*
             Colocando o maior resultado como resultado do blueness. No momento,
-            o maior pixel tá sendo aquele com mais azul em si (o que não acho correto)
+            o maior pixel tá sendo aquele com maior valor após obter a cor RGB
+            e converter para Double
         */
         for(int i = 0; i < imagem.getWidth(); i++) {
             for(int j = 0; j < imagem.getHeight(); j++) {
-                //acho que essa comparação não funciona
-                if(resultadoAlg1[i][j].getRGB() > resultadoAlg2[i][j].getRGB()){
+                Double pixelRA =  Double.valueOf(resultadoAlg1[i][j].getRGB());
+                Double pixelRB =  Double.valueOf(resultadoAlg2[i][j].getRGB());
+                
+                //System.out.println("PA: " + pixelRA + " \n");
+                //System.out.println("PB: " + pixelRB + " \n");
+
+                if(pixelRB <= pixelRA){
                     imagem.setRGB(i, j, resultadoAlg1[i][j].getRGB());
                 }
                 else{

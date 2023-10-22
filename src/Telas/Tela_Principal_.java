@@ -73,7 +73,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Aplicar_BI_Ant_Lote_1 = new javax.swing.JMenuItem();
         Menu_Blueness_Index_2 = new javax.swing.JMenu();
         Blueness_2 = new javax.swing.JMenu();
-        Aplicar_BI_Imagem_2 = new javax.swing.JMenuItem();
+        Aplicar_AJ_menu = new javax.swing.JMenuItem();
         ___Separador_8 = new javax.swing.JPopupMenu.Separator();
         Aplicar_BI_Lote_2 = new javax.swing.JMenuItem();
         Menu_Segmentacao_ = new javax.swing.JMenu();
@@ -264,11 +264,11 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Menus.add(Menu_Blueness_Index_1);
 
         Menu_Blueness_Index_2.setBorder(null);
-        Menu_Blueness_Index_2.setText("Blueness Nielly e joão");
+        Menu_Blueness_Index_2.setText("Blueness Antonielly e joão");
         Menu_Blueness_Index_2.setFont(new java.awt.Font("Dialog", 1, 14)); // NOI18N
         Menu_Blueness_Index_2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Menu_Blueness_Index_2.setMinimumSize(new java.awt.Dimension(140, 25));
-        Menu_Blueness_Index_2.setPreferredSize(new java.awt.Dimension(180, 25));
+        Menu_Blueness_Index_2.setMinimumSize(new java.awt.Dimension(190, 25));
+        Menu_Blueness_Index_2.setPreferredSize(new java.awt.Dimension(190, 25));
 
         Blueness_2.setBorder(null);
         Blueness_2.setText("Blueness");
@@ -276,16 +276,16 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Blueness_2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         Blueness_2.setPreferredSize(new java.awt.Dimension(170, 25));
 
-        Aplicar_BI_Imagem_2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_BI_Imagem_2.setText("Aplicar na imagem");
-        Aplicar_BI_Imagem_2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_BI_Imagem_2.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_BI_Imagem_2.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_AJ_menu.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_AJ_menu.setText("Aplicar na imagem");
+        Aplicar_AJ_menu.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_AJ_menu.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_AJ_menu.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_BI_Imagem_2ActionPerformed(evt);
+                Aplicar_AJ_menuActionPerformed(evt);
             }
         });
-        Blueness_2.add(Aplicar_BI_Imagem_2);
+        Blueness_2.add(Aplicar_AJ_menu);
         Blueness_2.add(___Separador_8);
 
         Aplicar_BI_Lote_2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
@@ -581,7 +581,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         "Binarizacao Otsu" em um lote de imagens.   */
     private void Aplicar_Otsu_Lote_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_Otsu_Lote_ActionPerformed
         
-        Tela_Aplicacao_Lote Tela = new Tela_Aplicacao_Lote();
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Aplicar_segmentacao = true;
         Tela.Metodo_nome         = "_BinarizacaoOtsu";
@@ -659,7 +659,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     /*  Metodo para aplicar o algoritmo de BI, para deteccao
         do indice de cor Blueness, em um lote de imagens.   */
     private void Aplicar_BI_Lote_AntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Lote_AntActionPerformed
-        Tela_Aplicacao_Lote Tela = new Tela_Aplicacao_Lote();
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Detectar_BI = true;
         Tela.Metodo_nome = "_BlueGasparini";
@@ -705,7 +705,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         "Binarizacao Fuzzy Huang" em um lote de imagens.    */
     private void Aplicar_FuzzyHuang_Lote_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_FuzzyHuang_Lote_ActionPerformed
         
-        Tela_Aplicacao_Lote Tela = new Tela_Aplicacao_Lote();
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Aplicar_segmentacao = true;
         Tela.Metodo_nome         = "_BinFuzHuang";
@@ -741,19 +741,46 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     }//GEN-LAST:event_Aplicar_Bl_Ant_Imagem_1ActionPerformed
 
     private void Aplicar_BI_Ant_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Ant_Lote_1ActionPerformed
-        Tela_Aplicacao_Lote Tela = new Tela_Aplicacao_Lote();
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Detectar_BI = true;
         Tela.Metodo_nome = "_BlueGasparini";
         Tela.setVisible(true);
     }//GEN-LAST:event_Aplicar_BI_Ant_Lote_1ActionPerformed
 
-    private void Aplicar_BI_Imagem_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Imagem_2ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_Aplicar_BI_Imagem_2ActionPerformed
+    private void Aplicar_AJ_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_AJ_menuActionPerformed
+        JFrame F = new JFrame();
+        
+        if(Img_carregada){
+            
+            try{
+                
+                // Aplica o algoritmo na imagem atual.
+                BufferedImage Img_processada = Processamento_Imagem_.BIAJ_(Img_atual);
+                 
+                if(Img_processada == null) {
+                    JOptionPane.showMessageDialog(F, "Não foi possível aplicar a deteccao de BI!");
+                }
+                else{
+                    Img_atual = Img_processada;
+                    Tela_.setIcon(new javax.swing.ImageIcon(Img_atual));
+                    Img_BI = true;
+                }
+            }catch(NullPointerException | IllegalArgumentException ex){
+                JOptionPane.showMessageDialog(F, "Não foi possível aplicar a deteccao de BI!");
+                Logger.getLogger(Tela_Principal_.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }else{
+            JOptionPane.showMessageDialog(F, "Nenhuma imagem foi carregada!");
+        }
+    }//GEN-LAST:event_Aplicar_AJ_menuActionPerformed
 
     private void Aplicar_BI_Lote_2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Lote_2ActionPerformed
-        // TODO add your handling code here:
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
+        Tela.setLocationRelativeTo(null);
+        Tela.Detectar_BI = true;
+        Tela.Metodo_nome = "_Combinacao";
+        Tela.setVisible(true);
     }//GEN-LAST:event_Aplicar_BI_Lote_2ActionPerformed
 
     private void Aplicar_FuzzyHuang_Imagem_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_FuzzyHuang_Imagem_1ActionPerformed
@@ -786,7 +813,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     }//GEN-LAST:event_Aplicar_FuzzyHuang_Imagem_1ActionPerformed
 
     private void Aplicar_FuzzyHuang_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_FuzzyHuang_Lote_1ActionPerformed
-         Tela_Aplicacao_Lote Tela = new Tela_Aplicacao_Lote();
+         Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Aplicar_segmentacao = true;
         Tela.Metodo_nome         = "_BinPun";
@@ -874,9 +901,9 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JMenuItem Aplicar_AJ_menu;
     private javax.swing.JMenuItem Aplicar_BI_Ant_Lote_1;
     private javax.swing.JMenuItem Aplicar_BI_Imagem_;
-    private javax.swing.JMenuItem Aplicar_BI_Imagem_2;
     private javax.swing.JMenuItem Aplicar_BI_Lote_2;
     private javax.swing.JMenuItem Aplicar_BI_Lote_Ant;
     private javax.swing.JMenuItem Aplicar_Bl_Ant_Imagem_1;
