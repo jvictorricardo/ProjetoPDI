@@ -167,7 +167,7 @@
                 </Property>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Imagem_">
+                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Imagem_Joao_">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Cambria" size="14" style="1"/>
@@ -179,12 +179,12 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Imagem_ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Imagem_Joao_ActionPerformed"/>
                   </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JPopupMenu$Separator" name="___Separador_06">
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Lote_Ant">
+                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Joao_Lote_">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Cambria" size="14" style="1"/>
@@ -196,7 +196,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Lote_AntActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Joao_Lote_ActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>
@@ -239,7 +239,7 @@
                 </Property>
               </Properties>
               <SubComponents>
-                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_Bl_Ant_Imagem_1">
+                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_Bl_Imagem_Ant_">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Cambria" size="14" style="1"/>
@@ -251,12 +251,12 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_Bl_Ant_Imagem_1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_Bl_Imagem_Ant_ActionPerformed"/>
                   </Events>
                 </MenuItem>
                 <MenuItem class="javax.swing.JPopupMenu$Separator" name="___Separador_7">
                 </MenuItem>
-                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Ant_Lote_1">
+                <MenuItem class="javax.swing.JMenuItem" name="Aplicar_BI_Ant_Lote">
                   <Properties>
                     <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                       <Font name="Cambria" size="14" style="1"/>
@@ -268,7 +268,7 @@
                     </Property>
                   </Properties>
                   <Events>
-                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Ant_Lote_1ActionPerformed"/>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="Aplicar_BI_Ant_LoteActionPerformed"/>
                   </Events>
                 </MenuItem>
               </SubComponents>

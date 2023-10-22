@@ -63,14 +63,14 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Sair_ = new javax.swing.JMenuItem();
         Menu_Blueness_Index_ = new javax.swing.JMenu();
         Blueness_ = new javax.swing.JMenu();
-        Aplicar_BI_Imagem_ = new javax.swing.JMenuItem();
+        Aplicar_BI_Imagem_Joao_ = new javax.swing.JMenuItem();
         ___Separador_06 = new javax.swing.JPopupMenu.Separator();
-        Aplicar_BI_Lote_Ant = new javax.swing.JMenuItem();
+        Aplicar_BI_Joao_Lote_ = new javax.swing.JMenuItem();
         Menu_Blueness_Index_1 = new javax.swing.JMenu();
         Blueness_1 = new javax.swing.JMenu();
-        Aplicar_Bl_Ant_Imagem_1 = new javax.swing.JMenuItem();
+        Aplicar_Bl_Imagem_Ant_ = new javax.swing.JMenuItem();
         ___Separador_7 = new javax.swing.JPopupMenu.Separator();
-        Aplicar_BI_Ant_Lote_1 = new javax.swing.JMenuItem();
+        Aplicar_BI_Ant_Lote = new javax.swing.JMenuItem();
         Menu_Blueness_Index_2 = new javax.swing.JMenu();
         Blueness_2 = new javax.swing.JMenu();
         Aplicar_AJ_menu = new javax.swing.JMenuItem();
@@ -195,28 +195,28 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Blueness_.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         Blueness_.setPreferredSize(new java.awt.Dimension(170, 25));
 
-        Aplicar_BI_Imagem_.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_BI_Imagem_.setText("Aplicar na imagem");
-        Aplicar_BI_Imagem_.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_BI_Imagem_.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_BI_Imagem_.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_BI_Imagem_Joao_.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_BI_Imagem_Joao_.setText("Aplicar na imagem");
+        Aplicar_BI_Imagem_Joao_.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_BI_Imagem_Joao_.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_BI_Imagem_Joao_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_BI_Imagem_ActionPerformed(evt);
+                Aplicar_BI_Imagem_Joao_ActionPerformed(evt);
             }
         });
-        Blueness_.add(Aplicar_BI_Imagem_);
+        Blueness_.add(Aplicar_BI_Imagem_Joao_);
         Blueness_.add(___Separador_06);
 
-        Aplicar_BI_Lote_Ant.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_BI_Lote_Ant.setText("Aplicar em lote");
-        Aplicar_BI_Lote_Ant.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_BI_Lote_Ant.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_BI_Lote_Ant.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_BI_Joao_Lote_.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_BI_Joao_Lote_.setText("Aplicar em lote");
+        Aplicar_BI_Joao_Lote_.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_BI_Joao_Lote_.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_BI_Joao_Lote_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_BI_Lote_AntActionPerformed(evt);
+                Aplicar_BI_Joao_Lote_ActionPerformed(evt);
             }
         });
-        Blueness_.add(Aplicar_BI_Lote_Ant);
+        Blueness_.add(Aplicar_BI_Joao_Lote_);
 
         Menu_Blueness_Index_.add(Blueness_);
 
@@ -236,28 +236,28 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Blueness_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         Blueness_1.setPreferredSize(new java.awt.Dimension(170, 25));
 
-        Aplicar_Bl_Ant_Imagem_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_Bl_Ant_Imagem_1.setText("Aplicar na imagem");
-        Aplicar_Bl_Ant_Imagem_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_Bl_Ant_Imagem_1.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_Bl_Ant_Imagem_1.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_Bl_Imagem_Ant_.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_Bl_Imagem_Ant_.setText("Aplicar na imagem");
+        Aplicar_Bl_Imagem_Ant_.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_Bl_Imagem_Ant_.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_Bl_Imagem_Ant_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_Bl_Ant_Imagem_1ActionPerformed(evt);
+                Aplicar_Bl_Imagem_Ant_ActionPerformed(evt);
             }
         });
-        Blueness_1.add(Aplicar_Bl_Ant_Imagem_1);
+        Blueness_1.add(Aplicar_Bl_Imagem_Ant_);
         Blueness_1.add(___Separador_7);
 
-        Aplicar_BI_Ant_Lote_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
-        Aplicar_BI_Ant_Lote_1.setText("Aplicar em lote");
-        Aplicar_BI_Ant_Lote_1.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
-        Aplicar_BI_Ant_Lote_1.setPreferredSize(new java.awt.Dimension(150, 25));
-        Aplicar_BI_Ant_Lote_1.addActionListener(new java.awt.event.ActionListener() {
+        Aplicar_BI_Ant_Lote.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
+        Aplicar_BI_Ant_Lote.setText("Aplicar em lote");
+        Aplicar_BI_Ant_Lote.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
+        Aplicar_BI_Ant_Lote.setPreferredSize(new java.awt.Dimension(150, 25));
+        Aplicar_BI_Ant_Lote.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Aplicar_BI_Ant_Lote_1ActionPerformed(evt);
+                Aplicar_BI_Ant_LoteActionPerformed(evt);
             }
         });
-        Blueness_1.add(Aplicar_BI_Ant_Lote_1);
+        Blueness_1.add(Aplicar_BI_Ant_Lote);
 
         Menu_Blueness_Index_1.add(Blueness_1);
 
@@ -625,7 +625,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     
     /*  Metodo para aplicar o algoritmo de BI, para deteccao do indice de cor
         Blueness (Desenvolvido por João Victor RR em 2022/2), em uma imagem.    */
-    private void Aplicar_BI_Imagem_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Imagem_ActionPerformed
+    private void Aplicar_BI_Imagem_Joao_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Imagem_Joao_ActionPerformed
         
         JFrame F = new JFrame();
         
@@ -653,18 +653,18 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(F, "Nenhuma imagem foi carregada!");
         }
-    }//GEN-LAST:event_Aplicar_BI_Imagem_ActionPerformed
+    }//GEN-LAST:event_Aplicar_BI_Imagem_Joao_ActionPerformed
 
     
     /*  Metodo para aplicar o algoritmo de BI, para deteccao
         do indice de cor Blueness, em um lote de imagens.   */
-    private void Aplicar_BI_Lote_AntActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Lote_AntActionPerformed
+    private void Aplicar_BI_Joao_Lote_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Joao_Lote_ActionPerformed
         Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Detectar_BI = true;
-        Tela.Metodo_nome = "_BlueGasparini";
+        Tela.Metodo_nome = "_BlueGabautz";
         Tela.setVisible(true);
-    }//GEN-LAST:event_Aplicar_BI_Lote_AntActionPerformed
+    }//GEN-LAST:event_Aplicar_BI_Joao_Lote_ActionPerformed
 
     
     
@@ -713,13 +713,11 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Tela.setVisible(true);
     }//GEN-LAST:event_Aplicar_FuzzyHuang_Lote_ActionPerformed
 
-    private void Aplicar_Bl_Ant_Imagem_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_Bl_Ant_Imagem_1ActionPerformed
+    private void Aplicar_Bl_Imagem_Ant_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_Bl_Imagem_Ant_ActionPerformed
         JFrame F = new JFrame();
         
-        if(Img_carregada){
-            
-            try{
-                
+        if(Img_carregada){            
+            try{                
                 // Aplica o algoritmo na imagem atual.
                 BufferedImage Img_processada = Processamento_Imagem_.BIA_(Img_atual);
                  
@@ -738,15 +736,15 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         }else{
             JOptionPane.showMessageDialog(F, "Nenhuma imagem foi carregada!");
         }
-    }//GEN-LAST:event_Aplicar_Bl_Ant_Imagem_1ActionPerformed
+    }//GEN-LAST:event_Aplicar_Bl_Imagem_Ant_ActionPerformed
 
-    private void Aplicar_BI_Ant_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Ant_Lote_1ActionPerformed
+    private void Aplicar_BI_Ant_LoteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_BI_Ant_LoteActionPerformed
         Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Detectar_BI = true;
         Tela.Metodo_nome = "_BlueGasparini";
         Tela.setVisible(true);
-    }//GEN-LAST:event_Aplicar_BI_Ant_Lote_1ActionPerformed
+    }//GEN-LAST:event_Aplicar_BI_Ant_LoteActionPerformed
 
     private void Aplicar_AJ_menuActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_AJ_menuActionPerformed
         JFrame F = new JFrame();
@@ -902,11 +900,11 @@ public class Tela_Principal_ extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JMenuItem Aplicar_AJ_menu;
-    private javax.swing.JMenuItem Aplicar_BI_Ant_Lote_1;
-    private javax.swing.JMenuItem Aplicar_BI_Imagem_;
+    private javax.swing.JMenuItem Aplicar_BI_Ant_Lote;
+    private javax.swing.JMenuItem Aplicar_BI_Imagem_Joao_;
+    private javax.swing.JMenuItem Aplicar_BI_Joao_Lote_;
     private javax.swing.JMenuItem Aplicar_BI_Lote_2;
-    private javax.swing.JMenuItem Aplicar_BI_Lote_Ant;
-    private javax.swing.JMenuItem Aplicar_Bl_Ant_Imagem_1;
+    private javax.swing.JMenuItem Aplicar_Bl_Imagem_Ant_;
     private javax.swing.JMenuItem Aplicar_FuzzyHuang_Imagem_;
     private javax.swing.JMenuItem Aplicar_FuzzyHuang_Imagem_1;
     private javax.swing.JMenuItem Aplicar_FuzzyHuang_Lote_;
