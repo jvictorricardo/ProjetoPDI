@@ -11,6 +11,7 @@ import javax.imageio.ImageIO;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import Processamento.Processamento_Imagem_;
+import java.util.Arrays;
 
 /**
  * @author João Victor do Rozário Recla - 2022/2
@@ -78,7 +79,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
         jLabel2.setText("        Selecione uma pasta com arquivos de imagem:");
 
         Campo_Pasta_Origem_.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        Campo_Pasta_Origem_.setText("Selecione uma pasta de origem...");
+        Campo_Pasta_Origem_.setText("Selecione uma pasta com as imagens de origem...");
         Campo_Pasta_Origem_.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         Campo_Pasta_Origem_.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,6 +102,11 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
         Campo_Pasta_Destino_.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
         Campo_Pasta_Destino_.setText("Selecione uma pasta de destino...");
         Campo_Pasta_Destino_.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
+        Campo_Pasta_Destino_.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                Campo_Pasta_Destino_ActionPerformed(evt);
+            }
+        });
 
         Selecionar_Pasta_Destino_.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Selecionar_Pasta_Destino_.setText("Selecionar...");
@@ -150,7 +156,7 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
         jLabel5.setText("Selecione uma pasta com imagens binarizadas:              ");
 
         Campo_Binarias.setFont(new java.awt.Font("Cambria", 0, 14)); // NOI18N
-        Campo_Binarias.setText("Selecione uma pasta de destino...");
+        Campo_Binarias.setText("Selecione uma com imagens binarizadas...");
         Campo_Binarias.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
 
         Selecionar_Pasta_Destino_1.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
@@ -329,32 +335,78 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
                     if(Qnt_imagens==Qnt_bin){
                         //criando uma lista de referências para a pasta de imagens binarias
                         File[] ArquivosBin = Pasta_origemBin.listFiles();
-                        System.out.println(ArquivosBin);
-                        for(File Arquivos: Pasta_origem.listFiles()){
-                            System.out.println(ArquivosBin[Qnt_imgs_processadas]);
+                        File[] ArquivosOriginal = Pasta_origem.listFiles();
+                        
+                        //Ordenando a lista para verificar se resolve o conflito encontrado
+                        //Arrays.sort(ArquivosBin);
+                        //Arrays.sort(ArquivosOriginal);
+                        
+                        //testando sem a ordenação...
+                        //System.out.println(Arrays.toString(ArquivosBin));
+                        //System.out.println(Arrays.toString(ArquivosOriginal));
+                        
+                        //System.out.println(ArquivosBin);
+                        for(int i = 0; i < ArquivosBin.length;i++){
+                            //System.out.println(ArquivosBin[Qnt_imgs_processadas]);
                             // Identifica os arquivos de imagem, com a extensao selecionada, dentro da pasta.
-                            if((Opcao_PNG_.isSelected() && Arquivos.getName().toLowerCase().endsWith(".png"))||
-                               (Opcao_JPG_.isSelected() && Arquivos.getName().toLowerCase().endsWith(".jpg")) ||
-                               (Opcao_JPG_.isSelected() && Arquivos.getName().toLowerCase().endsWith(".jpeg")) ||
-                               (Opcao_BMP_.isSelected() && Arquivos.getName().toLowerCase().endsWith(".bmp")))
+                            if((Opcao_PNG_.isSelected() && ArquivosBin[i].getName().toLowerCase().endsWith(".png"))||
+                               (Opcao_JPG_.isSelected() && ArquivosBin[i].getName().toLowerCase().endsWith(".jpg")) ||
+                               (Opcao_JPG_.isSelected() && ArquivosBin[i].getName().toLowerCase().endsWith(".jpeg")) ||
+                               (Opcao_BMP_.isSelected() && ArquivosBin[i].getName().toLowerCase().endsWith(".bmp"))||
+                               (Opcao_PNG_.isSelected() && ArquivosOriginal[i].getName().toLowerCase().endsWith(".png"))||
+                               (Opcao_JPG_.isSelected() && ArquivosOriginal[i].getName().toLowerCase().endsWith(".jpg")) ||
+                               (Opcao_JPG_.isSelected() && ArquivosOriginal[i].getName().toLowerCase().endsWith(".jpeg")) ||
+                               (Opcao_BMP_.isSelected() && ArquivosOriginal[i].getName().toLowerCase().endsWith(".bmp"))
+                               )
                             {
-
                                 try {
-
                                     // Pega uma imagem.
-                                    BufferedImage Img_original   = ImageIO.read(Arquivos);
-                                    BufferedImage Img_binaria   = ImageIO.read(ArquivosBin[Qnt_imgs_processadas]);
-                                    BufferedImage Img_Processada = Img_original;
-
-                                    // Aplica algum algoritmo.
-                                    //Img_Processada = Processamento_Imagem_.RI_(Img_original);
-                                    Img_Processada = DeteccaoFinal.Aplicar_Deteccao_Final_(Img_binaria, Img_original);
+                                    BufferedImage Img_binaria   = ImageIO.read(ArquivosBin[i]);                       
                                     
-                                    // Salva a imagem processada.
-                                    File Fo = new File(Pasta_destino.getPath() +"/" +Arquivos.getName().substring(0, Arquivos.getName().length() - 4) +Metodo_nome +".png");
-                                    ImageIO.write(Img_Processada, "png", Fo);
-                                    Qnt_imgs_processadas++;
+                                    //obtendo apenas o nome do arquivo correspondente                                  
+                                    String nomezin = ArquivosBin[i].getName();
+                                    String reg = "_";
+                                    String[] res = nomezin.split(reg);
+                                    nomezin = res[0];                                  
+                                    //testando se selecionou o nome certinho
+                                    System.out.println("Saída: " + res[0] + " !!!");
+                                    
+                                    
+                                    //Adicionando um valor temporário para a variável que recebe o arquivo original
+                                    BufferedImage Img_original =  Img_binaria;
+                                    
+                                    for(int x = 0; x < ArquivosOriginal.length; x++){
+                                        String nomeOriginal = ArquivosOriginal[x].getName();
+                                        nomeOriginal = nomeOriginal.substring(0, nomeOriginal.lastIndexOf('.'));
+                                        
+                                        //Testando a leitura de arquivos originais e binarizados
+                                        //System.out.println("kd: "+nomezin);
+                                        //System.out.println("agr: "+nomeOriginal);                                        
+                                        
+                                        //encontrou a imagem correspondente
+                                        if(nomeOriginal.equals(nomezin)){
+                                            Img_original = ImageIO.read(ArquivosOriginal[x]);
+                                            break;
+                                        }
+                                    }
+                                    
+                                    if(Img_original != Img_binaria){ 
+                                        //vamos ficar devendo tratamento de erro no caso de 
+                                        // não haver um arquivo de nome correspondente
+                                        BufferedImage Img_Processada = Img_original;                                          
 
+                                        // Aplica algum algoritmo.
+                                        //Img_Processada = Processamento_Imagem_.RI_(Img_original);
+                                        Img_Processada = DeteccaoFinal.Aplicar_Deteccao_Final_(Img_binaria, Img_original);
+
+                                        // Salva a imagem processada.
+                                        File Fo = new File(Pasta_destino.getPath() +"/" + ArquivosOriginal[i].getName() + Metodo_nome +".png");
+                                        ImageIO.write(Img_Processada, "png", Fo);
+
+                                        Qnt_imgs_processadas++;
+                                    }else{
+                                        System.out.println("Arquivo binarizado não encontrado na pasta de imagens de origem!");
+                                    }
                                 } catch (IOException ex) {
                                     Logger.getLogger(Tela_Aplicacao_Lote_.class.getName()).log(Level.SEVERE, null, ex);
                                 }    
@@ -480,6 +532,10 @@ public class Tela_Aplicacao_Lote_DeteccaoFinal extends javax.swing.JFrame {
     private void Campo_Pasta_Origem_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_Pasta_Origem_ActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_Campo_Pasta_Origem_ActionPerformed
+
+    private void Campo_Pasta_Destino_ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Campo_Pasta_Destino_ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Campo_Pasta_Destino_ActionPerformed
 
     
     /**

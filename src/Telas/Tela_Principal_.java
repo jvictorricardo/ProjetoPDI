@@ -431,7 +431,6 @@ public class Tela_Principal_ extends javax.swing.JFrame {
 
         Sobre_2.setFont(new java.awt.Font("Cambria", 1, 14)); // NOI18N
         Sobre_2.setText("Aplicar em lote");
-        Sobre_2.setEnabled(false);
         Sobre_2.setHorizontalTextPosition(javax.swing.SwingConstants.LEADING);
         Sobre_2.setPreferredSize(new java.awt.Dimension(170, 25));
         Sobre_2.addActionListener(new java.awt.event.ActionListener() {
@@ -777,7 +776,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
         Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Detectar_BI = true;
-        Tela.Metodo_nome = "_Combinacao";
+        Tela.Metodo_nome = "_BlueFAJ";
         Tela.setVisible(true);
     }//GEN-LAST:event_Aplicar_BI_Lote_2ActionPerformed
 
@@ -811,7 +810,7 @@ public class Tela_Principal_ extends javax.swing.JFrame {
     }//GEN-LAST:event_Aplicar_FuzzyHuang_Imagem_1ActionPerformed
 
     private void Aplicar_FuzzyHuang_Lote_1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Aplicar_FuzzyHuang_Lote_1ActionPerformed
-         Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
+        Tela_Aplicacao_Lote_ Tela = new Tela_Aplicacao_Lote_();
         Tela.setLocationRelativeTo(null);
         Tela.Aplicar_segmentacao = true;
         Tela.Metodo_nome         = "_BinPun";

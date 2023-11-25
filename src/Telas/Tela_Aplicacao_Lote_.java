@@ -307,7 +307,7 @@ public class Tela_Aplicacao_Lote_ extends javax.swing.JFrame {
                                         case "_BlueGasparini":
                                             Img_Processada = Processamento_Imagem_.BIA_(Img_original);
                                             break;
-                                        case "_Combinacao":
+                                        case "_BlueFAJ":
                                             Img_Processada = Processamento_Imagem_.BIAJ_(Img_original);
                                             break;
                                         default:
